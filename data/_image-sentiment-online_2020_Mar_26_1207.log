@@ -1,0 +1,21 @@
+8.8567 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x130b0af28>, gamma=None, gammaErrorPolicy='raise', kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1306f7198>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1440,  900]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+8.8567 	EXP 	window1: recordFrameIntervals = False
+9.0210 	EXP 	window1: recordFrameIntervals = True
+9.2060 	EXP 	window1: recordFrameIntervals = False
+10.0072 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image=None, interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.5, 0.5]), texRes=128, units='height', win=Window(...))
+10.2322 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='画像に感じた感情を選んでください。\n\nhoge hoge hgoe', units='height', win=Window(...), wrapWidth=1)
+10.2610 	EXP 	Created textGazePoint = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textGazePoint', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='+', units='height', win=Window(...), wrapWidth=1)
+10.2889 	EXP 	Created textQuestionRecog = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textQuestionRecog', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+10.3234 	EXP 	textGazePoint: autoDraw = True
+11.3039 	EXP 	image: autoDraw = True
+11.3379 	EXP 	textGazePoint: autoDraw = False
+12.3054 	EXP 	image: autoDraw = False
+13.3047 	EXP 	text: autoDraw = True
+15.3051 	EXP 	text: autoDraw = False
+15.3051 	EXP 	textQuestionRecog: autoDraw = True
+18.3044 	EXP 	textQuestionRecog: autoDraw = False
+18.3044 	EXP 	image: autoDraw = False
+18.3044 	EXP 	text: autoDraw = False
+18.3044 	EXP 	textGazePoint: autoDraw = False
+18.3044 	EXP 	textQuestionRecog: autoDraw = False
+18.5984 	EXP 	window1: mouseVisible = True

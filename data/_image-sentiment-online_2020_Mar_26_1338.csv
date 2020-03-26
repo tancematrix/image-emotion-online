@@ -1,0 +1,3 @@
+﻿image.started,image.stopped,text.started,text.stopped,key_resp.keys,key_resp.started,key_resp.stopped,textGazePoint.started,textGazePoint.stopped,textQuestionRecog.started,textQuestionRecog.stopped,keyQuestionRecog.keys,keyQuestionRecog.started,keyQuestionRecog.stopped,participant,session,date,expName,psychopyVersion,frameRate,
+6.9677152119984385,7.969528334011557,8.969247661007103,10.975103194010444,None,8.969247661007103,10.975103194010444,,,,,,,,,001,2020_Mar_26_1338,image-sentiment-online,3.2.4,195.82963944820975,
+,,,,,,,5.973529865994351,6.973818525992101,10.962807992007583,None,None,10.962807992007583,None,,001,2020_Mar_26_1338,image-sentiment-online,3.2.4,195.82963944820975,

@@ -1,0 +1,6 @@
+9.7551 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x131608fd0>, gamma=None, gammaErrorPolicy='raise', kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x131308278>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1440,  900]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+9.7552 	EXP 	window1: recordFrameIntervals = False
+9.9152 	EXP 	window1: recordFrameIntervals = True
+10.0979 	EXP 	window1: recordFrameIntervals = False
+10.9501 	ERROR 	Couldn't find image ../small_samples/0020.jpg; check path? (tried: /Users/takeuchi/research/image-sentiment/gaze-and-emotion/small_samples/0020.jpg)
+11.2368 	EXP 	window1: mouseVisible = True

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.2.4),
-    on Thu Mar 26 12:07:29 2020
+    on Thu Mar 26 13:39:03 2020
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -80,7 +80,7 @@ trialClock = core.Clock()
 image = visual.ImageStim(
     win=win,
     name='image', 
-    image=None, mask=None,
+    image='small_samples/0020.jpg', mask=None,
     ori=0, pos=(0, 0), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,

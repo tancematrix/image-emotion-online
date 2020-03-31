@@ -95,7 +95,7 @@ function experimentInit() {
   textQuestionEmo = new visual.TextStim({
     win: psychoJS.window,
     name: 'textQuestionEmo',
-    text: '画像に感じた感情を選んでください。\n\nhoge hoge hgoe',
+    text: '画像に感じた感情を選んでください。\n\n1. positive, 2. negative\n4. わからない',
     font: 'Arial',
     units : undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
@@ -119,10 +119,10 @@ function experimentInit() {
   textQuestionRecog = new visual.TextStim({
     win: psychoJS.window,
     name: 'textQuestionRecog',
-    text: '画像中にあったオブジェクトを選んでください\n\nhoge hoge hoge\nhoge hoge hoge',
+    text: 'default text',
     font: 'Arial',
     units : undefined, 
-    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
     depth: -4.0 
   });
@@ -178,9 +178,10 @@ function trialRoutineBegin() {
   frameN = -1;
   routineTimer.add(8.000000);
   // update component parameters for each repeat
-  image.setImage(imagePaths);
+  image.setImage(path);
   key_resp.keys = undefined;
   key_resp.rt = undefined;
+  textQuestionRecog.setText((((((((((((('画像中にあったオブジェクトを選んでください\n\n' + '1. ') + objects_choices_0) + '  2. ') + objects_choices_1) + '  3. ') + objects_choices_2) + '\n\n4. ') + objects_choices_3) + '  5. ') + objects_choices_4) + '  6. ') + objects_choices_5));
   keyQuestionRecog.keys = undefined;
   keyQuestionRecog.rt = undefined;
   // keep track of which components have finished

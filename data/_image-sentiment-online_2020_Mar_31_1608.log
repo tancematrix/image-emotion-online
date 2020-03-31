@@ -1,0 +1,20 @@
+5.0966 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x131807f28>, gamma=None, gammaErrorPolicy='raise', kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x12f4be6a0>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1440,  900]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.0966 	EXP 	window1: recordFrameIntervals = False
+5.2634 	EXP 	window1: recordFrameIntervals = True
+5.4342 	WARNING 	t of last frame was 21.59ms (=1/46)
+5.6132 	EXP 	window1: recordFrameIntervals = False
+6.3643 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=128, units='height', win=Window(...))
+6.5505 	EXP 	Created textQuestionEmo = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textQuestionEmo', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+6.5738 	EXP 	Created textGazePoint = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textGazePoint', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='+', units='height', win=Window(...), wrapWidth=1)
+6.5885 	EXP 	Created textQuestionRecog = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textQuestionRecog', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+6.6168 	EXP 	Imported conditions.csv as conditions, 8 conditions, 23 params
+6.6172 	EXP 	Created sequence: random, trialTypes=8, nReps=5, seed=None
+6.6179 	EXP 	New trial (rep=0, index=0): OrderedDict([('orig_path', '/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_93.jpg'), ('path', 'small_samples/0020.jpg'), ('emotion', 'anger'), ('sentiment', 'N'), ('objects_choices_0', 'Nail'), ('objects_choices_1', 'Eye'), ('objects_choices_2', 'Finger'), ('objects_choices_3', 'Injury'), ('objects_choices_4', 'Texture'), ('objects_choices_5', 'Play'), ('GT_choices_0', True), ('GT_choices_1', False), ('GT_choices_2', True), ('GT_choices_3', True), ('GT_choices_4', False), ('GT_choices_5', False), ('objects_choices_ja_0', '辷ｪ'), ('objects_choices_ja_1', '逶ｮ'), ('objects_choices_ja_2', '謖'), ('objects_choices_ja_3', '蛯ｷ'), ('objects_choices_ja_4', '  蟶慍'), ('objects_choices_ja_5', '驕翫ｳ'), ('content_context', 'context')])
+6.8453 	EXP 	image: image = 'small_samples/0020.jpg'
+6.8453 	EXP 	textQuestionRecog: text = '画像中にあったオブジェクトを選んでください\nn1. Nail2. Eye3. Finger4. Injury5. Texture6. Play'
+6.8453 	EXP 	textGazePoint: autoDraw = True
+7.8121 	EXP 	image: autoDraw = True
+7.8456 	EXP 	textGazePoint: autoDraw = False
+8.8132 	EXP 	image: autoDraw = False
+9.6316 	DATA 	Keypress: escape
+9.9844 	EXP 	window1: mouseVisible = True

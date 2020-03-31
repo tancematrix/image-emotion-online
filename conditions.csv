@@ -1,9 +1,9 @@
-﻿imagePaths
-small_samples/0020.jpg
-small_samples/0100.jpg
-small_samples/0290.jpg
-small_samples/0330.jpg
-small_samples/0410.jpg
-small_samples/0420.jpg
-small_samples/0540.jpg
-small_samples/0570.jpg
+﻿orig_path,path,emotion,sentiment,objects_choices_0,objects_choices_1,objects_choices_2,objects_choices_3,objects_choices_4,objects_choices_5,GT_choices_0,GT_choices_1,GT_choices_2,GT_choices_3,GT_choices_4,GT_choices_5,objects_choices_ja_0,objects_choices_ja_1,objects_choices_ja_2,objects_choices_ja_3,objects_choices_ja_4,objects_choices_ja_5,content_context
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_93.jpg,small_samples/0020.jpg,anger,N,Nail,Eye,Finger,Injury,Texture,Play,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,辷ｪ,逶ｮ,謖,蛯ｷ,  蟶慍,驕翫ｳ,context
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_28.jpg,small_samples/0100.jpg,anger,N,Fire,Prison,Flower,Oilfield,Sea,Person,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,轣ｫ,蛻大漁謇繝ｻ逶｣迯,闃ｱ,豐ｹ逕ｰ,豬ｷ,莠ｺ,context
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_11.jpg,small_samples/0290.jpg,anger,N,Playground,Fire,Hearth,Outdoor,Finger,Puddle,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,驕翫ｳ蝣ｴ,轣ｫ,轤牙ｺ,螻句､,謖,豌ｴ縺溘∪繧,context
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_9.jpg,small_samples/0330.jpg,anger,N,Water,Cup,Blade,Lip,Finger,Eye,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,豌ｴ,繧ｫ繝,蛻,蜚,謖,逶ｮ,content
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_190.jpg,small_samples/0410.jpg,anger,N,Cloud,Water,Suspension Bridge,Field,Furniture,Crowd,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,髮ｲ,豌ｴ,蜷翫ｊ讖,驥主次,螳ｶ蜈ｷ,鄒､陦,content
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_129.jpg,small_samples/0420.jpg,anger,N,Belt,Construction Crane,Cosmetics,Animal,Person,Toy,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,繝吶Ν繝,蟒ｺ險ｭ繧ｯ繝ｬ繝ｼ繝ｳ,蛹也ｲｧ蜩,蜍慕黄,莠ｺ,縺翫ｂ縺｡繧,context
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_55.jpg,small_samples/0540.jpg,anger,N,Silhouette,Face,Stage,Handrail,Person,Tree,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,繧ｷ繝ｫ繧ｨ繝ヨ繝ｻ霈ｪ驛ｭ,鬘,闊槫床,謇九☆繧,莠ｺ,譛ｨ,context
+/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/disgust/img_disgust_29.jpg,small_samples/0570.jpg,disgust,N,Window,Cup,Fly,Water,Crystal,Cutlery,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,遯,繧ｫ繝,繝上お,豌ｴ,豌ｴ譎ｶ繝ｻ邨先匕,鬟溷勣,context

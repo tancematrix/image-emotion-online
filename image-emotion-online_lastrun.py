@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.2.4),
-    on Tue Mar 31 14:11:53 2020
+    on Tue Mar 31 16:16:04 2020
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -81,12 +81,12 @@ image = visual.ImageStim(
     win=win,
     name='image', 
     image='sin', mask=None,
-    ori=0, pos=(0, 0), size=(0.5, 0.5),
+    ori=0, pos=(0, 0), size=(1, 1),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=0.0)
 textQuestionEmo = visual.TextStim(win=win, name='textQuestionEmo',
-    text='画像に感じた感情を選んでください。\n\nhoge hoge hgoe',
+    text='画像に感じた感情を選んでください。\n\n1. positive, 2. negative\n4. わからない',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -101,9 +101,9 @@ textGazePoint = visual.TextStim(win=win, name='textGazePoint',
     languageStyle='LTR',
     depth=-3.0);
 textQuestionRecog = visual.TextStim(win=win, name='textQuestionRecog',
-    text='画像中にあったオブジェクトを選んでください\n\nhoge hoge hoge\nhoge hoge hoge',
+    text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.05, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-4.0);
@@ -135,9 +135,10 @@ for thisTrial in trials:
     # ------Prepare to start Routine "trial"-------
     routineTimer.add(8.000000)
     # update component parameters for each repeat
-    image.setImage(imagePaths)
+    image.setImage(path)
     key_resp.keys = []
     key_resp.rt = []
+    textQuestionRecog.setText("画像中にあったオブジェクトを選んでください\n\n" + "1. " + objects_choices_0 + "2. " + objects_choices_1 + "3. " + objects_choices_2 + "\n\n4. " + objects_choices_3 + "5. " + objects_choices_4 + "6. " + objects_choices_5)
     keyQuestionRecog.keys = []
     keyQuestionRecog.rt = []
     # keep track of which components have finished

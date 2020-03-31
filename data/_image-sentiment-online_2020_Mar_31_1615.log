@@ -1,0 +1,32 @@
+4.5217 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x130dc8eb8>, gamma=None, gammaErrorPolicy='raise', kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x12f5ec630>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1440,  900]), stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+4.5218 	EXP 	window1: recordFrameIntervals = False
+4.6879 	EXP 	window1: recordFrameIntervals = True
+4.8716 	EXP 	window1: recordFrameIntervals = False
+5.0979 	EXP 	Created image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='image', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=128, units='height', win=Window(...))
+5.2671 	EXP 	Created textQuestionEmo = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textQuestionEmo', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='height', win=Window(...), wrapWidth=1)
+5.2903 	EXP 	Created textGazePoint = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textGazePoint', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='+', units='height', win=Window(...), wrapWidth=1)
+5.3045 	EXP 	Created textQuestionRecog = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='textQuestionRecog', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='height', win=Window(...), wrapWidth=1)
+5.3343 	EXP 	Imported conditions.csv as conditions, 8 conditions, 23 params
+5.3348 	EXP 	Created sequence: random, trialTypes=8, nReps=5, seed=None
+5.3357 	EXP 	New trial (rep=0, index=0): OrderedDict([('orig_path', '/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/disgust/img_disgust_29.jpg'), ('path', 'small_samples/0570.jpg'), ('emotion', 'disgust'), ('sentiment', 'N'), ('objects_choices_0', 'Window'), ('objects_choices_1', 'Cup'), ('objects_choices_2', 'Fly'), ('objects_choices_3', 'Water'), ('objects_choices_4', 'Crystal'), ('objects_choices_5', 'Cutlery'), ('GT_choices_0', False), ('GT_choices_1', True), ('GT_choices_2', True), ('GT_choices_3', False), ('GT_choices_4', False), ('GT_choices_5', True), ('objects_choices_ja_0', '遯'), ('objects_choices_ja_1', '繧ｫ繝'), ('objects_choices_ja_2', '繝上お'), ('objects_choices_ja_3', '豌ｴ'), ('objects_choices_ja_4', '豌ｴ譎ｶ繝ｻ邨先匕'), ('objects_choices_ja_5', '鬟溷勣'), ('content_context', 'context')])
+5.5055 	EXP 	image: image = 'small_samples/0570.jpg'
+5.5055 	EXP 	textQuestionRecog: text = '画像中にあったオブジェクトを選んでください\nn1. Window2. Cup3. Fly\n\n4. Water5. Crystal6. Cutlery'
+5.5055 	EXP 	textGazePoint: autoDraw = True
+6.4874 	EXP 	image: autoDraw = True
+6.5210 	EXP 	textGazePoint: autoDraw = False
+7.4878 	EXP 	image: autoDraw = False
+8.4878 	EXP 	textQuestionEmo: autoDraw = True
+10.4881 	EXP 	textQuestionEmo: autoDraw = False
+10.4881 	EXP 	textQuestionRecog: autoDraw = True
+13.3424 	EXP 	New trial (rep=0, index=1): OrderedDict([('orig_path', '/home/takeuchi/data/image_sentiment_data/EmotionROI/train_resize_rename/anger/img_anger_28.jpg'), ('path', 'small_samples/0100.jpg'), ('emotion', 'anger'), ('sentiment', 'N'), ('objects_choices_0', 'Fire'), ('objects_choices_1', 'Prison'), ('objects_choices_2', 'Flower'), ('objects_choices_3', 'Oilfield'), ('objects_choices_4', 'Sea'), ('objects_choices_5', 'Person'), ('GT_choices_0', True), ('GT_choices_1', False), ('GT_choices_2', False), ('GT_choices_3', False), ('GT_choices_4', False), ('GT_choices_5', False), ('objects_choices_ja_0', '轣ｫ'), ('objects_choices_ja_1', '蛻大漁謇繝ｻ逶｣迯'), ('objects_choices_ja_2', '闃ｱ'), ('objects_choices_ja_3', '豐ｹ逕ｰ'), ('objects_choices_ja_4', '豬ｷ'), ('objects_choices_ja_5', '莠ｺ'), ('content_context', 'context')])
+13.4219 	EXP 	image: autoDraw = False
+13.4219 	EXP 	textQuestionEmo: autoDraw = False
+13.4219 	EXP 	textGazePoint: autoDraw = False
+13.4219 	EXP 	textQuestionRecog: autoDraw = False
+13.4219 	EXP 	image: image = 'small_samples/0100.jpg'
+13.4219 	EXP 	textQuestionRecog: text = '画像中にあったオブジェクトを選んでください\nn1. Fire2. Prison3. Flower\n\n4. Oilfield5. Sea6. Person'
+13.4219 	EXP 	textGazePoint: autoDraw = True
+14.4061 	EXP 	image: autoDraw = True
+14.4260 	DATA 	Keypress: escape
+14.4374 	EXP 	textGazePoint: autoDraw = False
+14.8774 	EXP 	window1: mouseVisible = True

@@ -32,9 +32,10 @@ psychoJS.scheduleCondition(function() { return (psychoJS.gui.dialogComponent.but
 // flowScheduler gets run if the participants presses OK
 flowScheduler.add(updateInfo); // add timeStamp
 flowScheduler.add(experimentInit);
-flowScheduler.add(trialRoutineBegin);
-flowScheduler.add(trialRoutineEachFrame);
-flowScheduler.add(trialRoutineEnd);
+const trialsLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(trialsLoopBegin, trialsLoopScheduler);
+flowScheduler.add(trialsLoopScheduler);
+flowScheduler.add(trialsLoopEnd);
 flowScheduler.add(quitPsychoJS, '', true);
 
 // quit if user presses Cancel in dialog box:
@@ -64,7 +65,7 @@ function updateInfo() {
 
 var trialClock;
 var image;
-var text;
+var textQuestionEmo;
 var key_resp;
 var textGazePoint;
 var textQuestionRecog;
@@ -77,15 +78,15 @@ function experimentInit() {
   image = new visual.ImageStim({
     win : psychoJS.window,
     name : 'image', units : undefined, 
-    image : 'small_samples/0020.jpg', mask : undefined,
+    image : undefined, mask : undefined,
     ori : 0, pos : [0, 0], size : [0.5, 0.5],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
   });
-  text = new visual.TextStim({
+  textQuestionEmo = new visual.TextStim({
     win: psychoJS.window,
-    name: 'text',
+    name: 'textQuestionEmo',
     text: '画像に感じた感情を選んでください。\n\nhoge hoge hgoe',
     font: 'Arial',
     units : undefined, 
@@ -127,6 +128,44 @@ function experimentInit() {
   return Scheduler.Event.NEXT;
 }
 
+var trials;
+var currentLoop;
+var trialIterator;
+function trialsLoopBegin(thisScheduler) {
+  // set up handler to look after randomisation of conditions etc
+  trials = new TrialHandler({
+    psychoJS: psychoJS,
+    nReps: 5, method: TrialHandler.Method.RANDOM,
+    extraInfo: expInfo, originPath: undefined,
+    trialList: undefined,
+    seed: undefined, name: 'trials'});
+  psychoJS.experiment.addLoop(trials); // add the loop to the experiment
+  currentLoop = trials;  // we're now the current loop
+
+  // Schedule all the trials in the trialList:
+  trialIterator = trials[Symbol.iterator]();
+  while(true) {
+    let result = trialIterator.next();
+    if (result.done);
+      break;
+    let thisTrial = result.value;
+    thisScheduler.add(importConditions(trials));
+    thisScheduler.add(trialRoutineBegin);
+    thisScheduler.add(trialRoutineEachFrame);
+    thisScheduler.add(trialRoutineEnd);
+    thisScheduler.add(endLoopIteration({thisScheduler, isTrials : true}));
+  }
+
+  return Scheduler.Event.NEXT;
+}
+
+
+function trialsLoopEnd() {
+  psychoJS.experiment.removeLoop(trials);
+
+  return Scheduler.Event.NEXT;
+}
+
 var t;
 var frameN;
 var trialComponents;
@@ -137,6 +176,7 @@ function trialRoutineBegin() {
   frameN = -1;
   routineTimer.add(8.000000);
   // update component parameters for each repeat
+  image.setImage('../small_samples/');
   key_resp.keys = undefined;
   key_resp.rt = undefined;
   keyQuestionRecog.keys = undefined;
@@ -144,7 +184,7 @@ function trialRoutineBegin() {
   // keep track of which components have finished
   trialComponents = [];
   trialComponents.push(image);
-  trialComponents.push(text);
+  trialComponents.push(textQuestionEmo);
   trialComponents.push(key_resp);
   trialComponents.push(textGazePoint);
   trialComponents.push(textQuestionRecog);
@@ -181,17 +221,17 @@ function trialRoutineEachFrame() {
     image.setAutoDraw(false);
   }
   
-  // *text* updates
-  if (t >= 3.0 && text.status === PsychoJS.Status.NOT_STARTED) {
+  // *textQuestionEmo* updates
+  if (t >= 3.0 && textQuestionEmo.status === PsychoJS.Status.NOT_STARTED) {
     // keep track of start time/frame for later
-    text.tStart = t;  // (not accounting for frame time here)
-    text.frameNStart = frameN;  // exact frame index
-    text.setAutoDraw(true);
+    textQuestionEmo.tStart = t;  // (not accounting for frame time here)
+    textQuestionEmo.frameNStart = frameN;  // exact frame index
+    textQuestionEmo.setAutoDraw(true);
   }
 
   frameRemains = 3.0 + 2.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-  if (text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-    text.setAutoDraw(false);
+  if (textQuestionEmo.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+    textQuestionEmo.setAutoDraw(false);
   }
   
   // *key_resp* updates

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.2.4),
-    on Thu Mar 26 14:14:36 2020
+    on Tue Mar 31 13:47:17 2020
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -80,12 +80,12 @@ trialClock = core.Clock()
 image = visual.ImageStim(
     win=win,
     name='image', 
-    image='small_samples/0020.jpg', mask=None,
+    image='sin', mask=None,
     ori=0, pos=(0, 0), size=(0.5, 0.5),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,
     texRes=128, interpolate=True, depth=0.0)
-text = visual.TextStim(win=win, name='text',
+textQuestionEmo = visual.TextStim(win=win, name='textQuestionEmo',
     text='画像に感じた感情を選んでください。\n\nhoge hoge hgoe',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
@@ -113,221 +113,253 @@ keyQuestionRecog = keyboard.Keyboard()
 globalClock = core.Clock()  # to track the time since experiment started
 routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine 
 
-# ------Prepare to start Routine "trial"-------
-routineTimer.add(8.000000)
-# update component parameters for each repeat
-key_resp.keys = []
-key_resp.rt = []
-keyQuestionRecog.keys = []
-keyQuestionRecog.rt = []
-# keep track of which components have finished
-trialComponents = [image, text, key_resp, textGazePoint, textQuestionRecog, keyQuestionRecog]
-for thisComponent in trialComponents:
-    thisComponent.tStart = None
-    thisComponent.tStop = None
-    thisComponent.tStartRefresh = None
-    thisComponent.tStopRefresh = None
-    if hasattr(thisComponent, 'status'):
-        thisComponent.status = NOT_STARTED
-# reset timers
-t = 0
-_timeToFirstFrame = win.getFutureFlipTime(clock="now")
-trialClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
-frameN = -1
-continueRoutine = True
+# set up handler to look after randomisation of conditions etc
+trials = data.TrialHandler(nReps=5, method='random', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=[None],
+    seed=None, name='trials')
+thisExp.addLoop(trials)  # add the loop to the experiment
+thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+if thisTrial != None:
+    for paramName in thisTrial:
+        exec('{} = thisTrial[paramName]'.format(paramName))
 
-# -------Run Routine "trial"-------
-while continueRoutine and routineTimer.getTime() > 0:
-    # get current time
-    t = trialClock.getTime()
-    tThisFlip = win.getFutureFlipTime(clock=trialClock)
-    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-    # update/draw components on each frame
+for thisTrial in trials:
+    currentLoop = trials
+    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+    if thisTrial != None:
+        for paramName in thisTrial:
+            exec('{} = thisTrial[paramName]'.format(paramName))
     
-    # *image* updates
-    if image.status == NOT_STARTED and tThisFlip >= 1.0-frameTolerance:
-        # keep track of start time/frame for later
-        image.frameNStart = frameN  # exact frame index
-        image.tStart = t  # local t and not account for scr refresh
-        image.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(image, 'tStartRefresh')  # time at next scr refresh
-        image.setAutoDraw(True)
-    if image.status == STARTED:
-        # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > image.tStartRefresh + 1.0-frameTolerance:
-            # keep track of stop time/frame for later
-            image.tStop = t  # not accounting for scr refresh
-            image.frameNStop = frameN  # exact frame index
-            win.timeOnFlip(image, 'tStopRefresh')  # time at next scr refresh
-            image.setAutoDraw(False)
-    
-    # *text* updates
-    if text.status == NOT_STARTED and tThisFlip >= 3.0-frameTolerance:
-        # keep track of start time/frame for later
-        text.frameNStart = frameN  # exact frame index
-        text.tStart = t  # local t and not account for scr refresh
-        text.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
-        text.setAutoDraw(True)
-    if text.status == STARTED:
-        # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > text.tStartRefresh + 2.0-frameTolerance:
-            # keep track of stop time/frame for later
-            text.tStop = t  # not accounting for scr refresh
-            text.frameNStop = frameN  # exact frame index
-            win.timeOnFlip(text, 'tStopRefresh')  # time at next scr refresh
-            text.setAutoDraw(False)
-    
-    # *key_resp* updates
-    waitOnFlip = False
-    if key_resp.status == NOT_STARTED and tThisFlip >= 3.0-frameTolerance:
-        # keep track of start time/frame for later
-        key_resp.frameNStart = frameN  # exact frame index
-        key_resp.tStart = t  # local t and not account for scr refresh
-        key_resp.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(key_resp, 'tStartRefresh')  # time at next scr refresh
-        key_resp.status = STARTED
-        # keyboard checking is just starting
-        waitOnFlip = True
-        win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
-        win.callOnFlip(key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
-    if key_resp.status == STARTED:
-        # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > key_resp.tStartRefresh + 2-frameTolerance:
-            # keep track of stop time/frame for later
-            key_resp.tStop = t  # not accounting for scr refresh
-            key_resp.frameNStop = frameN  # exact frame index
-            win.timeOnFlip(key_resp, 'tStopRefresh')  # time at next scr refresh
-            key_resp.status = FINISHED
-    if key_resp.status == STARTED and not waitOnFlip:
-        theseKeys = key_resp.getKeys(keyList=['y', 'n', 'left', 'right', 'space'], waitRelease=False)
-        if len(theseKeys):
-            theseKeys = theseKeys[0]  # at least one key was pressed
-            
-            # check for quit:
-            if "escape" == theseKeys:
-                endExpNow = True
-            key_resp.keys.append(theseKeys.name)  # storing all keys
-            key_resp.rt.append(theseKeys.rt)
-            # a response ends the routine
-            continueRoutine = False
-    
-    # *textGazePoint* updates
-    if textGazePoint.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-        # keep track of start time/frame for later
-        textGazePoint.frameNStart = frameN  # exact frame index
-        textGazePoint.tStart = t  # local t and not account for scr refresh
-        textGazePoint.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(textGazePoint, 'tStartRefresh')  # time at next scr refresh
-        textGazePoint.setAutoDraw(True)
-    if textGazePoint.status == STARTED:
-        # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > textGazePoint.tStartRefresh + 1.0-frameTolerance:
-            # keep track of stop time/frame for later
-            textGazePoint.tStop = t  # not accounting for scr refresh
-            textGazePoint.frameNStop = frameN  # exact frame index
-            win.timeOnFlip(textGazePoint, 'tStopRefresh')  # time at next scr refresh
-            textGazePoint.setAutoDraw(False)
-    
-    # *textQuestionRecog* updates
-    if textQuestionRecog.status == NOT_STARTED and tThisFlip >= 5.0-frameTolerance:
-        # keep track of start time/frame for later
-        textQuestionRecog.frameNStart = frameN  # exact frame index
-        textQuestionRecog.tStart = t  # local t and not account for scr refresh
-        textQuestionRecog.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(textQuestionRecog, 'tStartRefresh')  # time at next scr refresh
-        textQuestionRecog.setAutoDraw(True)
-    if textQuestionRecog.status == STARTED:
-        # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > textQuestionRecog.tStartRefresh + 3.0-frameTolerance:
-            # keep track of stop time/frame for later
-            textQuestionRecog.tStop = t  # not accounting for scr refresh
-            textQuestionRecog.frameNStop = frameN  # exact frame index
-            win.timeOnFlip(textQuestionRecog, 'tStopRefresh')  # time at next scr refresh
-            textQuestionRecog.setAutoDraw(False)
-    
-    # *keyQuestionRecog* updates
-    waitOnFlip = False
-    if keyQuestionRecog.status == NOT_STARTED and tThisFlip >= 5.0-frameTolerance:
-        # keep track of start time/frame for later
-        keyQuestionRecog.frameNStart = frameN  # exact frame index
-        keyQuestionRecog.tStart = t  # local t and not account for scr refresh
-        keyQuestionRecog.tStartRefresh = tThisFlipGlobal  # on global time
-        win.timeOnFlip(keyQuestionRecog, 'tStartRefresh')  # time at next scr refresh
-        keyQuestionRecog.status = STARTED
-        # keyboard checking is just starting
-        waitOnFlip = True
-        win.callOnFlip(keyQuestionRecog.clock.reset)  # t=0 on next screen flip
-        win.callOnFlip(keyQuestionRecog.clearEvents, eventType='keyboard')  # clear events on next screen flip
-    if keyQuestionRecog.status == STARTED:
-        # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > keyQuestionRecog.tStartRefresh + 3-frameTolerance:
-            # keep track of stop time/frame for later
-            keyQuestionRecog.tStop = t  # not accounting for scr refresh
-            keyQuestionRecog.frameNStop = frameN  # exact frame index
-            win.timeOnFlip(keyQuestionRecog, 'tStopRefresh')  # time at next scr refresh
-            keyQuestionRecog.status = FINISHED
-    if keyQuestionRecog.status == STARTED and not waitOnFlip:
-        theseKeys = keyQuestionRecog.getKeys(keyList=['y', 'n', 'left', 'right', 'space'], waitRelease=False)
-        if len(theseKeys):
-            theseKeys = theseKeys[0]  # at least one key was pressed
-            
-            # check for quit:
-            if "escape" == theseKeys:
-                endExpNow = True
-            keyQuestionRecog.keys = theseKeys.name  # just the last key pressed
-            keyQuestionRecog.rt = theseKeys.rt
-            # a response ends the routine
-            continueRoutine = False
-    
-    # check for quit (typically the Esc key)
-    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
-        core.quit()
-    
-    # check if all components have finished
-    if not continueRoutine:  # a component has requested a forced-end of Routine
-        break
-    continueRoutine = False  # will revert to True if at least one component still running
+    # ------Prepare to start Routine "trial"-------
+    # update component parameters for each repeat
+    image.setImage(imagePaths)
+    key_resp.keys = []
+    key_resp.rt = []
+    keyQuestionRecog.keys = []
+    keyQuestionRecog.rt = []
+    # keep track of which components have finished
+    trialComponents = [image, textQuestionEmo, key_resp, textGazePoint, textQuestionRecog, keyQuestionRecog]
     for thisComponent in trialComponents:
-        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-            continueRoutine = True
-            break  # at least one component has not yet finished
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    trialClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+    frameN = -1
+    continueRoutine = True
     
-    # refresh the screen
-    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-        win.flip()
+    # -------Run Routine "trial"-------
+    while continueRoutine:
+        # get current time
+        t = trialClock.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=trialClock)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *image* updates
+        if image.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            image.frameNStart = frameN  # exact frame index
+            image.tStart = t  # local t and not account for scr refresh
+            image.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(image, 'tStartRefresh')  # time at next scr refresh
+            image.setAutoDraw(True)
+        if image.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > image.tStartRefresh + 1.0-frameTolerance:
+                # keep track of stop time/frame for later
+                image.tStop = t  # not accounting for scr refresh
+                image.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(image, 'tStopRefresh')  # time at next scr refresh
+                image.setAutoDraw(False)
+        
+        # *textQuestionEmo* updates
+        if textQuestionEmo.status == NOT_STARTED and tThisFlip >= 3.0-frameTolerance:
+            # keep track of start time/frame for later
+            textQuestionEmo.frameNStart = frameN  # exact frame index
+            textQuestionEmo.tStart = t  # local t and not account for scr refresh
+            textQuestionEmo.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(textQuestionEmo, 'tStartRefresh')  # time at next scr refresh
+            textQuestionEmo.setAutoDraw(True)
+        if textQuestionEmo.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > textQuestionEmo.tStartRefresh + 2.0-frameTolerance:
+                # keep track of stop time/frame for later
+                textQuestionEmo.tStop = t  # not accounting for scr refresh
+                textQuestionEmo.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(textQuestionEmo, 'tStopRefresh')  # time at next scr refresh
+                textQuestionEmo.setAutoDraw(False)
+        
+        # *key_resp* updates
+        waitOnFlip = False
+        if key_resp.status == NOT_STARTED and tThisFlip >= 3.0-frameTolerance:
+            # keep track of start time/frame for later
+            key_resp.frameNStart = frameN  # exact frame index
+            key_resp.tStart = t  # local t and not account for scr refresh
+            key_resp.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(key_resp, 'tStartRefresh')  # time at next scr refresh
+            key_resp.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if key_resp.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > key_resp.tStartRefresh + 2-frameTolerance:
+                # keep track of stop time/frame for later
+                key_resp.tStop = t  # not accounting for scr refresh
+                key_resp.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(key_resp, 'tStopRefresh')  # time at next scr refresh
+                key_resp.status = FINISHED
+        if key_resp.status == STARTED and not waitOnFlip:
+            theseKeys = key_resp.getKeys(keyList=['y', 'n', 'left', 'right', 'space'], waitRelease=False)
+            if len(theseKeys):
+                theseKeys = theseKeys[0]  # at least one key was pressed
+                
+                # check for quit:
+                if "escape" == theseKeys:
+                    endExpNow = True
+                key_resp.keys.append(theseKeys.name)  # storing all keys
+                key_resp.rt.append(theseKeys.rt)
+                # a response ends the routine
+                continueRoutine = False
+        
+        # *textGazePoint* updates
+        if textGazePoint.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            textGazePoint.frameNStart = frameN  # exact frame index
+            textGazePoint.tStart = t  # local t and not account for scr refresh
+            textGazePoint.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(textGazePoint, 'tStartRefresh')  # time at next scr refresh
+            textGazePoint.setAutoDraw(True)
+        if textGazePoint.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > textGazePoint.tStartRefresh + 1.0-frameTolerance:
+                # keep track of stop time/frame for later
+                textGazePoint.tStop = t  # not accounting for scr refresh
+                textGazePoint.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(textGazePoint, 'tStopRefresh')  # time at next scr refresh
+                textGazePoint.setAutoDraw(False)
+        
+        # *textQuestionRecog* updates
+        if textQuestionRecog.status == NOT_STARTED and tThisFlip >= 5.0-frameTolerance:
+            # keep track of start time/frame for later
+            textQuestionRecog.frameNStart = frameN  # exact frame index
+            textQuestionRecog.tStart = t  # local t and not account for scr refresh
+            textQuestionRecog.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(textQuestionRecog, 'tStartRefresh')  # time at next scr refresh
+            textQuestionRecog.setAutoDraw(True)
+        if textQuestionRecog.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > textQuestionRecog.tStartRefresh + 3.0-frameTolerance:
+                # keep track of stop time/frame for later
+                textQuestionRecog.tStop = t  # not accounting for scr refresh
+                textQuestionRecog.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(textQuestionRecog, 'tStopRefresh')  # time at next scr refresh
+                textQuestionRecog.setAutoDraw(False)
+        
+        # *keyQuestionRecog* updates
+        waitOnFlip = False
+        if keyQuestionRecog.status == NOT_STARTED and tThisFlip >= 5.0-frameTolerance:
+            # keep track of start time/frame for later
+            keyQuestionRecog.frameNStart = frameN  # exact frame index
+            keyQuestionRecog.tStart = t  # local t and not account for scr refresh
+            keyQuestionRecog.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(keyQuestionRecog, 'tStartRefresh')  # time at next scr refresh
+            keyQuestionRecog.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(keyQuestionRecog.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(keyQuestionRecog.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if keyQuestionRecog.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > keyQuestionRecog.tStartRefresh + 3-frameTolerance:
+                # keep track of stop time/frame for later
+                keyQuestionRecog.tStop = t  # not accounting for scr refresh
+                keyQuestionRecog.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(keyQuestionRecog, 'tStopRefresh')  # time at next scr refresh
+                keyQuestionRecog.status = FINISHED
+        if keyQuestionRecog.status == STARTED and not waitOnFlip:
+            theseKeys = keyQuestionRecog.getKeys(keyList=['y', 'n', 'left', 'right', 'space'], waitRelease=False)
+            if len(theseKeys):
+                theseKeys = theseKeys[0]  # at least one key was pressed
+                
+                # check for quit:
+                if "escape" == theseKeys:
+                    endExpNow = True
+                keyQuestionRecog.keys = theseKeys.name  # just the last key pressed
+                keyQuestionRecog.rt = theseKeys.rt
+                # a response ends the routine
+                continueRoutine = False
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in trialComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "trial"-------
+    for thisComponent in trialComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    trials.addData('image.started', image.tStartRefresh)
+    trials.addData('image.stopped', image.tStopRefresh)
+    trials.addData('textQuestionEmo.started', textQuestionEmo.tStartRefresh)
+    trials.addData('textQuestionEmo.stopped', textQuestionEmo.tStopRefresh)
+    # check responses
+    if key_resp.keys in ['', [], None]:  # No response was made
+        key_resp.keys = None
+    trials.addData('key_resp.keys',key_resp.keys)
+    if key_resp.keys != None:  # we had a response
+        trials.addData('key_resp.rt', key_resp.rt)
+    trials.addData('key_resp.started', key_resp.tStartRefresh)
+    trials.addData('key_resp.stopped', key_resp.tStopRefresh)
+    trials.addData('textGazePoint.started', textGazePoint.tStartRefresh)
+    trials.addData('textGazePoint.stopped', textGazePoint.tStopRefresh)
+    trials.addData('textQuestionRecog.started', textQuestionRecog.tStartRefresh)
+    trials.addData('textQuestionRecog.stopped', textQuestionRecog.tStopRefresh)
+    # check responses
+    if keyQuestionRecog.keys in ['', [], None]:  # No response was made
+        keyQuestionRecog.keys = None
+    trials.addData('keyQuestionRecog.keys',keyQuestionRecog.keys)
+    if keyQuestionRecog.keys != None:  # we had a response
+        trials.addData('keyQuestionRecog.rt', keyQuestionRecog.rt)
+    trials.addData('keyQuestionRecog.started', keyQuestionRecog.tStartRefresh)
+    trials.addData('keyQuestionRecog.stopped', keyQuestionRecog.tStopRefresh)
+    # the Routine "trial" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    thisExp.nextEntry()
+    
+# completed 5 repeats of 'trials'
 
-# -------Ending Routine "trial"-------
-for thisComponent in trialComponents:
-    if hasattr(thisComponent, "setAutoDraw"):
-        thisComponent.setAutoDraw(False)
-thisExp.addData('image.started', image.tStartRefresh)
-thisExp.addData('image.stopped', image.tStopRefresh)
-thisExp.addData('text.started', text.tStartRefresh)
-thisExp.addData('text.stopped', text.tStopRefresh)
-# check responses
-if key_resp.keys in ['', [], None]:  # No response was made
-    key_resp.keys = None
-thisExp.addData('key_resp.keys',key_resp.keys)
-if key_resp.keys != None:  # we had a response
-    thisExp.addData('key_resp.rt', key_resp.rt)
-thisExp.addData('key_resp.started', key_resp.tStartRefresh)
-thisExp.addData('key_resp.stopped', key_resp.tStopRefresh)
-thisExp.nextEntry()
-thisExp.addData('textGazePoint.started', textGazePoint.tStartRefresh)
-thisExp.addData('textGazePoint.stopped', textGazePoint.tStopRefresh)
-thisExp.addData('textQuestionRecog.started', textQuestionRecog.tStartRefresh)
-thisExp.addData('textQuestionRecog.stopped', textQuestionRecog.tStopRefresh)
-# check responses
-if keyQuestionRecog.keys in ['', [], None]:  # No response was made
-    keyQuestionRecog.keys = None
-thisExp.addData('keyQuestionRecog.keys',keyQuestionRecog.keys)
-if keyQuestionRecog.keys != None:  # we had a response
-    thisExp.addData('keyQuestionRecog.rt', keyQuestionRecog.rt)
-thisExp.addData('keyQuestionRecog.started', keyQuestionRecog.tStartRefresh)
-thisExp.addData('keyQuestionRecog.stopped', keyQuestionRecog.tStopRefresh)
-thisExp.nextEntry()
+# get names of stimulus parameters
+if trials.trialList in ([], [None], None):
+    params = []
+else:
+    params = trials.trialList[0].keys()
+# save data for this loop
+trials.saveAsExcel(filename + '.xlsx', sheetName='trials',
+    stimOut=params,
+    dataOut=['n','all_mean','all_std', 'all_raw'])
 
 # Flip one final time so any remaining win.callOnFlip() 
 # and win.timeOnFlip() tasks get executed before quitting

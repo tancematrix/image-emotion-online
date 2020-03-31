@@ -79,7 +79,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image', units : undefined, 
     image : undefined, mask : undefined,
-    ori : 0, pos : [0, 0], size : [0.5, 0.5],
+    ori : 0, pos : [0, 0], size : [1, 1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -137,7 +137,7 @@ function trialsLoopBegin(thisScheduler) {
     psychoJS: psychoJS,
     nReps: 5, method: TrialHandler.Method.RANDOM,
     extraInfo: expInfo, originPath: undefined,
-    trialList: undefined,
+    trialList: 'conditions.csv',
     seed: undefined, name: 'trials'});
   psychoJS.experiment.addLoop(trials); // add the loop to the experiment
   currentLoop = trials;  // we're now the current loop
@@ -176,7 +176,7 @@ function trialRoutineBegin() {
   frameN = -1;
   routineTimer.add(8.000000);
   // update component parameters for each repeat
-  image.setImage('../small_samples/');
+  image.setImage(imagePaths);
   key_resp.keys = undefined;
   key_resp.rt = undefined;
   keyQuestionRecog.keys = undefined;

@@ -40,7 +40,7 @@
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
         <Param name="flipVert" updates="constant" val="False" valType="bool"/>
-        <Param name="image" updates="set every repeat" val="../small_samples/" valType="str"/>
+        <Param name="image" updates="set every repeat" val="$imagePaths" valType="str"/>
         <Param name="interpolate" updates="constant" val="linear" valType="str"/>
         <Param name="mask" updates="constant" val="None" valType="str"/>
         <Param name="name" updates="None" val="image" valType="code"/>
@@ -48,10 +48,10 @@
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
-        <Param name="size" updates="constant" val="(0.5, 0.5)" valType="code"/>
+        <Param name="size" updates="constant" val="(1, 1)" valType="code"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="1.0" valType="code"/>
+        <Param name="startVal" updates="None" val="1." valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="1.0" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
@@ -171,8 +171,8 @@
   <Flow>
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('imagePaths', '0020.jpg')]), OrderedDict([('imagePaths', '0100.jpg')]), OrderedDict([('imagePaths', '0290.jpg')]), OrderedDict([('imagePaths', '0330.jpg')]), OrderedDict([('imagePaths', '0410.jpg')]), OrderedDict([('imagePaths', '0420.jpg')]), OrderedDict([('imagePaths', '0540.jpg')]), OrderedDict([('imagePaths', '0570.jpg')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="conditions.csv" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
